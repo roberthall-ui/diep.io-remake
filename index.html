@@ -1,15 +1,44 @@
-<h1>My Game Hub</h1>
+<body>
+  <h1>My Game Hub</h1>
 
-<a href="#shooter">▶ Arena Shooter</a>
+  <!-- Menu -->
+  <div id="menu">
+    <button onclick="showGame('clicker')">Clicker Game</button>
+    <button onclick="showGame('shooter')">Arena Shooter</button>
+  </div>
 
-<hr>
+  <hr>
 
-<h2 id="shooter">Arena Shooter</h2>
-<canvas id="game" width="600" height="400"></canvas>
+  <!-- Clicker Game -->
+  <div id="clicker-game">
+    <h2>Clicker Game</h2>
+    <p>Click the button to increase your score!</p>
+    <h2 id="score">Score: 0</h2>
+    <button id="clickBtn">Click me</button>
+  </div>
 
-<p>
-  Move: WASD / Arrow Keys<br>
-  Shoot: Space
-</p>
+  <!-- Shooter Game -->
+  <div id="shooter-game" style="display:none;">
+    <h2>Arena Shooter</h2>
+    <canvas id="game" width="600" height="400"></canvas>
+    <p>
+      Move: WASD / Arrow Keys<br>
+      Shoot: Space
+    </p>
+  </div>
 
-<script src="shooter.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script src="shooter.js"></script>
+  <script>
+    function showGame(game) {
+      if (game === 'clicker') {
+        document.getElementById('clicker-game').style.display = 'block';
+        document.getElementById('shooter-game').style.display = 'none';
+      } else if (game === 'shooter') {
+        document.getElementById('clicker-game').style.display = 'none';
+        document.getElementById('shooter-game').style.display = 'block';
+      }
+    }
+  </script>
+</body>

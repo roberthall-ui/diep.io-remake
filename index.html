@@ -41,4 +41,20 @@
       }
     }
   </script>
+  <script src="script.js"></script>
+<script src="shooter.js"></script>
+<script>
+  function showGame(game) {
+    if (game === 'clicker') {
+      document.getElementById('clicker-game').style.display = 'block';
+      document.getElementById('shooter-game').style.display = 'none';
+      startClicker();
+    } else if (game === 'shooter') {
+      document.getElementById('clicker-game').style.display = 'none';
+      document.getElementById('shooter-game').style.display = 'block';
+      startShooter();
+    }
+  }
+</script>
+
 </body>
